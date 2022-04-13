@@ -55,7 +55,7 @@ if(NOT QT_VERSION)
 endif()
 
 add_library(obs-vst MODULE)
-add_library(OBS::vst ALIAS obs-vst)
+add_library(Volume-OBS::vst ALIAS obs-vst)
 
 find_qt(VERSION ${QT_VERSION} COMPONENTS Widgets)
 
@@ -75,7 +75,7 @@ target_sources(
           headers/vst-plugin-callbacks.hpp headers/EditorWidget.h
           headers/VSTPlugin.h)
 
-target_link_libraries(obs-vst PRIVATE OBS::libobs Qt::Widgets)
+target_link_libraries(obs-vst PRIVATE Volume-OBS::libobs Qt::Widgets)
 
 target_include_directories(
   obs-vst PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/headers)
